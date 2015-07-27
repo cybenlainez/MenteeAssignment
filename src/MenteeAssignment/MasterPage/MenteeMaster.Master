@@ -1,0 +1,64 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MenteeMaster.master.cs" Inherits="MenteeAssignment.MasterPage.MenteeMaster" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>Mentee Assignment Site</title>
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+
+    <link href="~/styles/StyleSheetGeneral.css" rel="stylesheet" type="text/css" />
+
+    <link rel="icon" href="~/Images/favicon.ico" type="image/favicon"/>
+    <link rel="shortcut icon" href="~/Images/favicon.ico" type="image/favicon"/>
+</head>
+<body>
+    <form id="form1" runat="server">
+
+    <asp:ScriptManager ID="ScriptManager1" runat="server">
+    </asp:ScriptManager>
+
+    <div id="header">
+        <div id="header-logo">
+            <div id="logo"></div>
+            <div id="menu">
+                <table>
+                    <tr>
+                        <td>
+                            <asp:LinkButton ID="lnkbtnHome" runat="server" onclick="lnkbtnHome_Click"><span>Home</span></asp:LinkButton>
+                        </td>
+                        <td>
+                            <asp:LinkButton ID="lnkbtnUser" runat="server" onclick="lnkbtnCustomer_Click"><span>Customer</span></asp:LinkButton>
+                        </td>
+                        <td>
+                            <asp:LinkButton ID="lnkbtnEmployee" runat="server" onclick="lnkbtnTransactions_Click"><span>Transactions</span></asp:LinkButton>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div id="content">
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+    </div>
+
+    <div id="footer-fixed">
+        <center>
+            <table>
+                <tr>
+                    <td align="right" valign="middle">
+                        <p class="footer">Mentee Assignment © 2015<br />All rights reserved.</p>
+                    </td>
+                </tr>
+            </table>
+        </center>
+    </div>
+
+    </form>
+</body>
+</html>

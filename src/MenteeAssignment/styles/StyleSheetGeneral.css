@@ -1,0 +1,360 @@
+﻿*
+{
+    padding: 0;
+    margin: 0;
+    border-spacing: 0;
+}
+
+a
+{
+    text-decoration: none;
+    color: #039cfd;
+}
+
+a:hover
+{
+    cursor: pointer;
+    color: #03bbfd;
+}
+
+table
+{
+	border-collapse: collapse;
+}
+
+body
+{
+    background: #f9f9f9;
+}
+
+body.modal
+{
+    width: 100%;
+	background: #ffffff;
+}
+
+#header
+{
+    background: #f9f9f9;
+    height: 55px;
+    padding: 5px;
+}
+
+#header-logo
+{
+	width: 850px;
+	margin: auto;
+}
+
+#logo 
+{
+    float: left;
+	display: block;
+	width: 170px;
+	height: 55px;
+	background: url(../Images/kid-logo.png) bottom;
+	text-indent: -99999px;
+}
+
+#menu
+{
+    float: right;
+    padding: 8px 0 0 10px;
+}
+
+#menu td
+{
+    text-align: center;
+    font-family: 'Open Sans';
+    font-weight: 100;
+    font-size: 12px;
+    color: #777777;
+    padding: 0 20px 0 20px;
+    height: 40px;
+    cursor: pointer;
+}
+
+#menu td:hover
+{
+    background-color: #ececec;
+    color: #494949;
+}
+
+#menu a
+{
+    text-decoration: none;
+    color: #777777;
+}
+
+#content
+{
+    background: url(../Images/header-bg.jpg) repeat-x;
+	width: 100%;
+	padding-top: 25px;
+}
+
+#wrap
+{
+	width: 810px;
+	margin: auto;
+}
+
+#footer
+{
+	width: 100%;
+	padding: 20px 0 20px 0;
+	background-color: #404040;
+}
+
+#footer-fixed
+{
+	width: 100%;
+	padding: 10px 0 10px 0;
+	background: url(../Images/footer-bg.jpg) repeat #404040;
+	position: fixed;
+	bottom: 0;
+}
+
+#footer-fixed table
+{
+	width: 810px;
+}
+
+#footer-fixed a
+{
+	font-family: Tw Cen MT Condensed;
+	font-size: 18px;
+	color: #ffffff;
+}
+
+#footer-fixed a:hover
+{
+    cursor: wait;
+	color: #039cfd;
+}
+
+p.footer
+{
+	font-family: Microsoft Tai Le;
+	font-size: 11px;
+	color: #ababab;	
+}
+
+/* TABLE MODIFICATION */
+.table-items th
+{
+	border-bottom: 1px solid #ababab;
+	border-right: 1px solid #ababab;
+	font-weight: normal;
+	text-align: center;
+}
+
+.table-items td
+{
+	border-bottom: 1px solid #cccccc;
+	border-right: 1px solid #cccccc;
+	text-align: center;
+}
+
+.table-items .header
+{
+	 font: 11px Tahoma;
+	 color: #555555;
+	 text-decoration: none;
+}
+
+.table-items .header:hover
+{
+	 font: 11px Tahoma;
+	 color: #555555;
+	 text-decoration: underline;
+}
+
+.table-buttons td
+{
+	border-bottom: 0px solid #cccccc;
+	border-right: 0px solid #cccccc;
+	background: #e4e4e4; /* eaeaea */
+}
+
+.table-items tr
+{
+	background: #f8f8f8;
+	height: 20px;
+	text-align: center;
+	cursor: pointer;
+}
+
+.table-items tr.tr-row
+{
+	background: #e4e4e4; /* eaeaea */
+}
+
+.table-items tr:hover
+{
+	background: #eeeeee; /* e4e4e4 */
+}
+/* TABLE MODIFICATION */
+
+/* HOME */
+
+.main-greetings
+{
+    width: 100%;
+    float: left;
+    font-family: Microsoft Tai Le;
+    font-weight: bold;
+    font-size: 17px;
+}
+
+.main-header
+{
+    width: 100%;
+    float: left;
+    font-family: Tahoma;
+    font-size: 40px;
+    font-weight: bold;
+    padding: 5px 0 30px 0;
+}
+
+.main-details
+{
+    width: 280px;
+    float: left;
+    padding-right: 29px;
+}
+
+.main-details-header
+{
+    font-family: Microsoft Tai Le;
+    font-size: 13px;
+    font-weight: bold;
+    padding-bottom: 5px;
+}
+
+.main-details-details
+{
+    font-family: Microsoft Tai Le;
+    font-size: 12px;
+    padding-bottom: 15px;
+}
+
+.main-details-details ul
+{
+    padding-left: 20px;
+}
+
+#main-image
+{
+    float: left;
+    background: url(../Images/computer.jpg);
+    height: 423px;
+    width: 501px;
+}
+
+#retina
+{
+	/* The Retina effect */
+	background: url(../Images/computer-bigger.jpg) no-repeat center center white;
+	border: 2px solid white;
+
+	/* Positioned absolutely, so we can move it around */
+	position: relative;
+	height: 180px;
+	width: 180px;
+
+	/* Hidden by default */
+	display: none;
+
+	/* A blank cursor, notice the default fallback */
+	cursor: url(../Images/blank.cur),default;
+	
+	/* CSS3 Box Shadow */
+	-moz-box-shadow: 0 0 5px #777, 0 0 10px #aaa inset;
+	-webkit-box-shadow: 0 0 5px #777;
+	box-shadow: 0 0 5px #777, 0 0 10px #aaa inset;
+	
+	/* CSS3 rounded corners */
+	-moz-border-radius: 90px;
+	-webkit-border-radius: 90px;
+	border-radius: 90px;
+}
+
+#retina.chrome{
+	cursor: url(../Images/blank_google_chrome.cur),default;
+}
+
+/* HOME */
+
+/* SERVICES */
+
+.service-details
+{
+    width: 100%;
+    float: left;
+    border-top: solid 1px #e3e3e3;
+    padding-top: 15px;
+}
+
+.service-details-content
+{
+    width: 400px;
+    float: left;
+    margin: 10px 25px 0 0;
+}
+
+.service-details-content-header
+{
+    font-family: Tw Cen MT Condensed;
+    font-size: 18px;
+    color: #545454;
+    padding: 22px 0 30px 0;
+}
+
+.service-details-content-details
+{
+    float: left;
+    font-family: Microsoft Tai Le;
+    font-size: 12px;
+    text-align: justify;
+    line-height: 170%;
+    padding-bottom: 10px;
+}
+
+.service-details-content-header-image-1
+{
+    float: left;
+    height: 64px;
+    width: 64px;
+    background: url(../Images/service-logo-1.png);
+    margin-right: 10px;
+}
+
+.service-details-content-header-image-2
+{
+    float: left;
+    height: 64px;
+    width: 64px;
+    background: url(../Images/service-logo-2.png);
+    margin-right: 10px;
+}
+
+.service-details-content-header-image-3
+{
+    float: left;
+    height: 64px;
+    width: 64px;
+    background: url(../Images/service-logo-3.png);
+    margin-right: 10px;
+}
+
+.service-details-content-header-image-4
+{
+    float: left;
+    height: 64px;
+    width: 64px;
+    background: url(../Images/service-logo-4.png);
+    margin-right: 10px;
+}
+
+/* SERVICES */
