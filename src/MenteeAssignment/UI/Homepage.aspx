@@ -32,7 +32,7 @@
             </div>
             <div class="main-details-details">
                 <ul>
-                    <li>Learn CMS driven websites: blogs, magazines, Wordpress and Drupal themes</li>
+                    <li>Learn more about using GitHub repository with my professional mentor</li>
                     <li>Learn presentation websites and landing pages</li>
                     <li>Learn mobile websites and interfaces for mobile applications</li>
                     <li>Learn PSD to HTML services</li>
