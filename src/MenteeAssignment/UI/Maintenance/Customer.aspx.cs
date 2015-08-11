@@ -11,16 +11,13 @@ using System.Web.Security;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
 using System.Collections.Generic;
-using WCF;
+using BL;
 using Model;
 
 namespace MenteeAssignment.UI.Maintenance
 {
     public partial class Customer : System.Web.UI.Page
     {
-        CustomerService.WCFCustomerClient customerServciceObj = new CustomerService.WCFCustomerClient();
-        TransactionsService.WCFTransactionsClient transactionsServciceObj = new TransactionsService.WCFTransactionsClient();
-        
         //GLOBAL
         //////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -91,8 +88,8 @@ namespace MenteeAssignment.UI.Maintenance
                 if (ViewState["OrderByCustomer"] == null) { ViewState["OrderByCustomer"] = string.Empty; }
                 if (ViewState["DT_Customer"] == null)
                 {
-                    WCFCustomer WC = new WCFCustomer();
-                    ViewState["DT_Customer"] = WC.getAllCustomer(ViewState["WhereCustomer"].ToString(), ViewState["OrderByCustomer"].ToString());
+                    BLCustomer BC = new BLCustomer();
+                    ViewState["DT_Customer"] = BC.getAllCustomer(ViewState["WhereCustomer"].ToString(), ViewState["OrderByCustomer"].ToString());
                 }
                 return (DataTable)ViewState["DT_Customer"];
             }
@@ -116,7 +113,7 @@ namespace MenteeAssignment.UI.Maintenance
             switch (e.CommandName)
             {
                 case "Edit":
-                    FillFieldsCustomer(WCFCustomer.getCustomerByID(Convert.ToString(e.CommandArgument)));
+                    FillFieldsCustomer(BLCustomer.getCustomerByID(Convert.ToString(e.CommandArgument)));
                     ManageFieldsCustomer(true, false);
 
                     imgbtnAddCustomer.Visible = false;
@@ -126,7 +123,7 @@ namespace MenteeAssignment.UI.Maintenance
                     pnlCustomer.Enabled = false;
                     break;
                 case "Delete":
-                    WCFCustomer.delete(Convert.ToString(e.CommandArgument));
+                    BLCustomer.delete(Convert.ToString(e.CommandArgument));
                     imgbtnAddCustomer.Visible = true;
                     imgbtnSaveCustomer.Visible = false;
                     imgbtnCancelCustomer.Visible = false;
@@ -150,17 +147,17 @@ namespace MenteeAssignment.UI.Maintenance
         }
         protected void imgbtnSaveCustomer_Clicked(object sender, EventArgs e)
         {
-            bool UpdateFlag = Convert.ToBoolean(WCFCustomer.updateFlag(txtID.Text));
+            bool UpdateFlag = Convert.ToBoolean(BLCustomer.updateFlag(txtID.Text));
 
             if (UpdateFlag == true)
             {
-                WCFCustomer.update(GetFieldValuesCustomer());
+                BLCustomer.update(GetFieldValuesCustomer());
                 ViewState.Remove("DT_Customer");
                 BindPageDataSourceCustomer("");
             }
             else
             {
-                WCFCustomer.add(GetFieldValuesCustomer());
+                BLCustomer.add(GetFieldValuesCustomer());
                 ViewState.Remove("DT_Customer");
                 BindPageDataSourceCustomer("");
             }
@@ -244,7 +241,7 @@ namespace MenteeAssignment.UI.Maintenance
 
             PDS.DataSource = DV;
             PDS.AllowPaging = true;
-            PDS.PageSize = 10;
+            PDS.PageSize = 3;
 
             PDS.CurrentPageIndex = PageNumberCustomer;
 
@@ -381,7 +378,7 @@ namespace MenteeAssignment.UI.Maintenance
             ViewState.Remove("WhereCustomer");
 
             if (txtSearchCustomer.Text.Trim().Length > 0)
-                ViewState["WhereCustomer"] = WCFCustomer.determineHeader(lblSearchCustomer.Text, txtSearchCustomer.Text);
+                ViewState["WhereCustomer"] = BLCustomer.determineHeader(lblSearchCustomer.Text, txtSearchCustomer.Text);
 
             ViewState.Remove("DT_Customer");
             BindPageDataSourceCustomer("");
@@ -396,7 +393,7 @@ namespace MenteeAssignment.UI.Maintenance
             lblSearchCustomer.Text = e.CommandArgument.ToString();
 
             ViewState["OrderByCustomer"] = "";
-            ViewState["OrderByCustomer"] = WCFCustomer.determineSort(lblSearchCustomer.Text, LastSortDirection());
+            ViewState["OrderByCustomer"] = BLCustomer.determineSort(lblSearchCustomer.Text, LastSortDirection());
 
             BindPageDataSourceCustomer("");
 
@@ -416,8 +413,8 @@ namespace MenteeAssignment.UI.Maintenance
                 if (ViewState["OrderByTransaction"] == null) { ViewState["OrderByTransaction"] = string.Empty; }
                 if (ViewState["DT_Transaction"] == null)
                 {
-                    WCFTransactions WT = new WCFTransactions();
-                    ViewState["DT_Transaction"] = WT.getAllTransaction(ViewState["WhereTransaction"].ToString(), ViewState["OrderByTransaction"].ToString());
+                    BLTransactions BT = new BLTransactions();
+                    ViewState["DT_Transaction"] = BT.getAllTransaction(ViewState["WhereTransaction"].ToString(), ViewState["OrderByTransaction"].ToString());
                 }
                 return (DataTable)ViewState["DT_Transaction"];
             }
@@ -441,7 +438,7 @@ namespace MenteeAssignment.UI.Maintenance
             switch (e.CommandName)
             {
                 case "Edit":
-                    FillFieldsTransaction(WCFTransactions.getTransactionByID(Convert.ToString(e.CommandArgument)));
+                    FillFieldsTransaction(BLTransactions.getTransactionByID(Convert.ToString(e.CommandArgument)));
                     ManageFieldsTransaction(true, false);
 
                     imgbtnAddTransaction.Visible = false;
@@ -451,7 +448,7 @@ namespace MenteeAssignment.UI.Maintenance
                     pnlTransaction.Enabled = false;
                     break;
                 case "Delete":
-                    WCFTransactions.delete(Convert.ToString(e.CommandArgument));
+                    BLTransactions.delete(Convert.ToString(e.CommandArgument));
                     imgbtnAddTransaction.Visible = true;
                     imgbtnSaveTransaction.Visible = false;
                     imgbtnCancelTransaction.Visible = false;
@@ -475,17 +472,17 @@ namespace MenteeAssignment.UI.Maintenance
         }
         protected void imgbtnSaveTransaction_Clicked(object sender, EventArgs e)
         {
-            bool UpdateFlag = Convert.ToBoolean(WCFTransactions.updateFlag(txtTransactionID.Text));
+            bool UpdateFlag = Convert.ToBoolean(BLTransactions.updateFlag(txtTransactionID.Text));
 
             if (UpdateFlag == true)
             {
-                WCFTransactions.update(GetFieldValuesTransaction());
+                BLTransactions.update(GetFieldValuesTransaction());
                 ViewState.Remove("DT_Transaction");
                 BindPageDataSourceTransaction("");
             }
             else
             {
-                WCFTransactions.add(GetFieldValuesTransaction());
+                BLTransactions.add(GetFieldValuesTransaction());
                 ViewState.Remove("DT_Transaction");
                 BindPageDataSourceTransaction("");
             }
@@ -569,7 +566,7 @@ namespace MenteeAssignment.UI.Maintenance
 
             PDS.DataSource = DV;
             PDS.AllowPaging = true;
-            PDS.PageSize = 10;
+            PDS.PageSize = 3;
 
             PDS.CurrentPageIndex = PageNumberTransaction;
 
@@ -706,7 +703,7 @@ namespace MenteeAssignment.UI.Maintenance
             ViewState.Remove("WhereTransaction");
 
             if (txtSearchTransaction.Text.Trim().Length > 0)
-                ViewState["WhereTransaction"] = WCFTransactions.determineHeader(lblSearchTransaction.Text, txtSearchTransaction.Text);
+                ViewState["WhereTransaction"] = BLTransactions.determineHeader(lblSearchTransaction.Text, txtSearchTransaction.Text);
 
             ViewState.Remove("DT_Transaction");
             BindPageDataSourceTransaction("");
@@ -721,7 +718,7 @@ namespace MenteeAssignment.UI.Maintenance
             lblSearchTransaction.Text = e.CommandArgument.ToString();
 
             ViewState["OrderByTransaction"] = "";
-            ViewState["OrderByTransaction"] = WCFTransactions.determineSort(lblSearchTransaction.Text, LastSortDirection());
+            ViewState["OrderByTransaction"] = BLCustomer.determineSort(lblSearchTransaction.Text, LastSortDirection());
 
             BindPageDataSourceTransaction("");
 
