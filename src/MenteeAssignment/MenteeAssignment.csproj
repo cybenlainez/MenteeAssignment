@@ -138,13 +138,13 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
-    <ProjectReference Include="..\BL\BL.csproj">
-      <Project>{a1ac58a1-fac7-402e-ad9b-fc9b90b620f8}</Project>
-      <Name>BL</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Model\Model.csproj">
       <Project>{3deb6090-d8fe-495b-9d7f-ad1c7f3c00ae}</Project>
       <Name>Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WCF\WCF.csproj">
+      <Project>{e748d097-b17d-4c11-bde1-cbac22c3f7b8}</Project>
+      <Name>WCF</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
