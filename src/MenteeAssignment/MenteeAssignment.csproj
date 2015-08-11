@@ -39,6 +39,8 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -59,6 +61,27 @@
   <ItemGroup>
     <Content Include="images\rucl-logo.psd" />
     <Content Include="MasterPage\MenteeMaster.Master" />
+    <Content Include="Properties\DataSources\System.Data.DataTable.datasource" />
+    <None Include="Service References\CustomerService\WCFCustomer.wsdl" />
+    <None Include="Service References\CustomerService\WCFCustomer.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\CustomerService\WCFCustomer1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\CustomerService\WCFCustomer2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\TransactionsService\WCFTransactions.wsdl" />
+    <None Include="Service References\TransactionsService\WCFTransactions.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\TransactionsService\WCFTransactions1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\TransactionsService\WCFTransactions2.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -97,6 +120,19 @@
     <Content Include="images\service-logo-3.png" />
     <Content Include="images\service-logo-4.png" />
     <Content Include="scripts\JScriptGeneral.js" />
+    <None Include="Service References\CustomerService\configuration91.svcinfo" />
+    <None Include="Service References\CustomerService\configuration.svcinfo" />
+    <None Include="Service References\CustomerService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\TransactionsService\WCFTransactions.disco" />
+    <None Include="Service References\TransactionsService\configuration91.svcinfo" />
+    <None Include="Service References\TransactionsService\configuration.svcinfo" />
+    <None Include="Service References\TransactionsService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
     <Content Include="styles\StyleSheetGeneral.css" />
     <Content Include="UI\Homepage.aspx" />
     <Content Include="UI\Maintenance\Customer.aspx" />
@@ -114,6 +150,16 @@
       <DependentUpon>MenteeMaster.Master</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service References\CustomerService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\TransactionsService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="UI\Homepage.aspx.cs">
       <DependentUpon>Homepage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -136,19 +182,22 @@
       <DependentUpon>Transactions.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
-    <ProjectReference Include="..\BL\BL.csproj">
-      <Project>{a1ac58a1-fac7-402e-ad9b-fc9b90b620f8}</Project>
-      <Name>BL</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Model\Model.csproj">
       <Project>{3deb6090-d8fe-495b-9d7f-ad1c7f3c00ae}</Project>
       <Name>Model</Name>
     </ProjectReference>
+    <ProjectReference Include="..\WCF\WCF.csproj">
+      <Project>{19f5a6f3-f1f2-4ad8-acc5-0d0551f2e025}</Project>
+      <Name>WCF</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\CustomerService\" />
+    <WCFMetadataStorage Include="Service References\TransactionsService\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
