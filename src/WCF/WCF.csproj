@@ -7,7 +7,7 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{E748D097-B17D-4C11-BDE1-CBAC22C3F7B8}</ProjectGuid>
+    <ProjectGuid>{68A51E0F-603A-4539-B9DB-AD000498F2B5}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
@@ -59,6 +59,9 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Properties\DataSources\Model.ModelCustomer.datasource" />
+    <Content Include="Properties\DataSources\System.Data.DataTable.datasource" />
+    <Content Include="Properties\DataSources\Model.ModelTransactions.datasource" />
     <Content Include="WCFCustomer.svc" />
     <Content Include="WCFTransactions.svc" />
     <Content Include="Web.config" />
@@ -108,7 +111,7 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>52090</DevelopmentServerPort>
+          <DevelopmentServerPort>52850</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>http://localhost:52090/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>

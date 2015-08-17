@@ -19,18 +19,18 @@ namespace WCF
         {
             return new DLTransactions().getAllTransaction(strWhere, strOrderBy);
         }
-        public static ModelTransactions getTransactionByID(string ID)
+        public ModelTransactions getTransactionByID(string ID)
         {
             DLTransactions DT = new DLTransactions();
             return DT.getTransactionByID(ID);
         }
-        public static string determineHeader(string lbl, string txt)
+        public string determineHeader(string lbl, string txt)
         {
             DLTransactions DT = new DLTransactions();
             return DT.getHeader(lbl, txt);
         }
 
-        public static string determineSort(string lbl, string SortDirection)
+        public string determineSort(string lbl, string SortDirection)
         {
             DLTransactions DT = new DLTransactions();
             return DT.getSort(lbl, SortDirection);
@@ -38,26 +38,26 @@ namespace WCF
         #endregion
 
         #region Data Manipulation
-        public static void add(ModelTransactions MT)
+        public void add(ModelTransactions MT)
         {
             if (MT == null) return;
 
             DLTransactions DT = new DLTransactions();
             DT.add(MT);
         }
-        public static void update(ModelTransactions MT)
+        public void update(ModelTransactions MT)
         {
             if (MT == null) return;
 
             DLTransactions DT = new DLTransactions();
             DT.update(MT);
         }
-        public static void delete(string ID)
+        public void delete(string ID)
         {
             DLTransactions DT = new DLTransactions();
             DT.delete(ID);
         }
-        public static int updateFlag(string ID)
+        public int updateFlag(string ID)
         {
             DLTransactions DT = new DLTransactions();
             return DT.updateFlag(ID);

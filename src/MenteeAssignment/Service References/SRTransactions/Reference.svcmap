@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="f386a421-2324-4216-b3d9-3aefa45ce538" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:52090/WCFTransactions.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="WCFTransactions.xsd" MetadataType="Schema" ID="0f18f3f0-f53b-4b29-ae18-a7f00b14c149" SourceId="1" SourceUrl="http://localhost:52090/WCFTransactions.svc?xsd=xsd0" />
+    <MetadataFile FileName="WCFTransactions.wsdl" MetadataType="Wsdl" ID="8a761d3f-fff2-4a68-9d3d-58c37c88a7f3" SourceId="1" SourceUrl="http://localhost:52090/WCFTransactions.svc?wsdl" />
+    <MetadataFile FileName="WCFTransactions1.xsd" MetadataType="Schema" ID="68c361cd-f464-4614-8cab-8572a727f26a" SourceId="1" SourceUrl="http://localhost:52090/WCFTransactions.svc?xsd=xsd1" />
+    <MetadataFile FileName="WCFTransactions.disco" MetadataType="Disco" ID="f4ea59ac-4df9-4f45-9c21-bf427e7af5c6" SourceId="1" SourceUrl="http://localhost:52090/WCFTransactions.svc?disco" />
+    <MetadataFile FileName="WCFTransactions2.xsd" MetadataType="Schema" ID="e2c15312-0662-4a14-b387-e227c2930f7f" SourceId="1" SourceUrl="http://localhost:52090/WCFTransactions.svc?xsd=xsd2" />
+    <MetadataFile FileName="WCFTransactions3.xsd" MetadataType="Schema" ID="440fe385-2cc3-4d0b-b2d3-d90508ce9d90" SourceId="1" SourceUrl="http://localhost:52090/WCFTransactions.svc?xsd=xsd3" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

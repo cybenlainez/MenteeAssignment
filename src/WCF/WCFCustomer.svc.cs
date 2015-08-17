@@ -15,22 +15,23 @@ namespace WCF
     public class WCFCustomer : IWCFCustomer
     {
         #region Retrieve Data
+        [OperationBehavior]
         public DataTable getAllCustomer(string strWhere, string strOrderBy)
         {
             return new DLCustomer().getAllCustomer(strWhere, strOrderBy);
         }
-        public static ModelCustomer getCustomerByID(string ID)
+        public ModelCustomer getCustomerByID(string ID)
         {
             DLCustomer DC = new DLCustomer();
             return DC.getCustomerByID(ID);
         }
-        public static string determineHeader(string lbl, string txt)
+        public string determineHeader(string lbl, string txt)
         {
             DLCustomer DC = new DLCustomer();
             return DC.getHeader(lbl, txt);
         }
 
-        public static string determineSort(string lbl, string SortDirection)
+        public string determineSort(string lbl, string SortDirection)
         {
             DLCustomer DC = new DLCustomer();
             return DC.getSort(lbl, SortDirection);
@@ -38,26 +39,26 @@ namespace WCF
         #endregion
 
         #region Data Manipulation
-        public static void add(ModelCustomer MC)
+        public void add(ModelCustomer MC)
         {
             if (MC == null) return;
 
             DLCustomer DC = new DLCustomer();
             DC.add(MC);
         }
-        public static void update(ModelCustomer MC)
+        public void update(ModelCustomer MC)
         {
             if (MC == null) return;
 
             DLCustomer DC = new DLCustomer();
             DC.update(MC);
         }
-        public static void delete(string ID)
+        public void delete(string ID)
         {
             DLCustomer DC = new DLCustomer();
             DC.delete(ID);
         }
-        public static int updateFlag(string ID)
+        public int updateFlag(string ID)
         {
             DLCustomer DC = new DLCustomer();
             return DC.updateFlag(ID);

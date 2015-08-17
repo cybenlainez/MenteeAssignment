@@ -5,6 +5,7 @@ using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.Text;
 using System.Data;
+using Model;
 
 namespace WCF
 {
@@ -12,7 +13,26 @@ namespace WCF
     [ServiceContract]
     public interface IWCFCustomer
     {
+        #region Retrieve Data
         [OperationContract]
         DataTable getAllCustomer(string strWhere, string strOrderBy);
+        [OperationContract]
+        ModelCustomer getCustomerByID(string ID);
+        [OperationContract]
+        string determineHeader(string lbl, string txt);
+        [OperationContract]
+        string determineSort(string lbl, string SortDirection);
+        #endregion
+
+        #region Data Manipulation
+        [OperationContract]
+        void add(ModelCustomer MC);
+        [OperationContract]
+        void update(ModelCustomer MC);
+        [OperationContract]
+        void delete(string ID);
+        [OperationContract]
+        int updateFlag(string ID);
+        #endregion
     }
 }
